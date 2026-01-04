@@ -3,7 +3,7 @@ import { DataSource } from "typeorm";
 import { emploe } from "./entity/users";
 export const AppDataSource = new DataSource({
     type: "mongodb",
-    url: "mongodb://localhost:27017/test1",
+    url: process.env.MONGO_URI || '',
     synchronize: true,
     logging: true,
     entities: [User, emploe], // Explicit imports
