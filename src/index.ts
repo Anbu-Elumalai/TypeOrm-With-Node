@@ -27,8 +27,10 @@ AppDataSource.initialize()
       validation: true,
       classTransformer: true,
     });
-console.log("MONGO_URI:", process.env.MONGO_URI);
-
+    console.log("MONGO_URI:", process.env.MONGO_URI);
+    app.get('/test', () => {
+      console.log("🚀 Server running successfully");
+    })
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
